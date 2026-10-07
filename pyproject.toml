@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chatia-desktop"
+version = "0.1.0"
+description = "Asistente de escritorio para WhatsApp Cloud API y transcripciones"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "ChatIA contributors"}]
+dependencies = []
+
+[project.optional-dependencies]
+local = ["faster-whisper>=1.1,<2"]
+build = ["pyinstaller>=6.11,<7"]
+
+[project.gui-scripts]
+chatia = "chatia.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
